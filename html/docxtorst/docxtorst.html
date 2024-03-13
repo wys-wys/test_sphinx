@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. docx批量转rst方法 &mdash; [野火]sphinx文档规范与模版  文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7d86a446"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="1. ReST基础语法" href="../rest-syntax/base-syntax.html" />
+    <link rel="prev" title="2. 使用vscode编写rst文件" href="../install-sphinx-env/vscode.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            [野火]sphinx文档规范与模版
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">为什么使用sphinx写文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">关于本项目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about_us.html">关于野火</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/quick-contribute.html">快速参与本项目（提交bug或文档修改）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TODO.html">TODO和悬赏任务</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">使用sphinx和vscode编写文档</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install-sphinx-env/sphinx.html">1. sphinx的安装与使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-sphinx-env/vscode.html">2. 使用vscode编写rst文件</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. docx批量转rst方法</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">reST语法</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rest-syntax/base-syntax.html">1. ReST基础语法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rest-syntax/cross-reference.html">2. 超链接与文件引用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rest-syntax/code-highlight.html">3. 代码高亮</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rest-syntax/pic-video.html">4. 图片与视频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rest-syntax/math.html">5. 数学符号和公式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rest-syntax/admonition.html">6. 特殊提示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rest-syntax/directive-role.html">7. rst的指令和角色（directive and role）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rest-syntax/rule.html">8. 野火sphinx文档规范</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">使用markdown</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-syntax/markdown-sphinx.html">1. 使sphinx支持markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-syntax/markdown-demo.html">2. Markdown示例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">文档格式转换</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../format-convert/pandoc.html">使用pandoc进行文档转换</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">常见问题</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">常见问题</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">版权</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">版权说明</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">[野火]sphinx文档规范与模版</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>docx批量转rst方法</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/docxtorst/docxtorst.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="docxrst">
+<h1><span class="section-number">3. </span>docx批量转rst方法<a class="headerlink" href="#docxrst" title="Link to this heading"></a></h1>
+<section id="word">
+<h2><span class="section-number">3.1. </span>按章分割word文档<a class="headerlink" href="#word" title="Link to this heading"></a></h2>
+<p>1.将所需转换的文档放入一个新的文件夹中</p>
+<p>2.打开文档，进入大纲视图</p>
+<img alt="进入大纲视图" class="align-center" src="../_images/docxto002.png" />
+<p>3.合理选择显示级别，取消显示文本格式的选项后将显示本文档所有的章节名</p>
+<img alt="显示本文档所有的章节名" class="align-center" src="../_images/docxto003.png" />
+<p>4.点击第n章前的加号按钮，选中本章，点击显示文档按钮，出现创建选项</p>
+<img alt="出现创建选项" class="align-center" src="../_images/docxto004.png" />
+<p>5.点击创建按钮之后如图所示</p>
+<img alt="点击创建按钮" class="align-center" src="../_images/docxto005.png" />
+<p>6.所有章都按上述方法操作，点击保存</p>
+<img alt="点击保存" class="align-center" src="../_images/docxto006.png" />
+<p>7.文件夹中就出现了分割好的单独docx格式的文件，删除原来整本的文档</p>
+<img alt="分割好的单独docx" class="align-center" src="../_images/docxto007.png" />
+</section>
+<section id="id1">
+<h2><span class="section-number">3.2. </span>批量将分割后的docx转换为rst<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>1.将分割后的文件改成对应的英文名以方便转换</p>
+<img alt="分割后的文件" class="align-center" src="../_images/docxto008.png" />
+<p>2.新建一个文本文档，内容如下，获取当前列表中的文件名</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>DIR<span class="w"> </span>*.*<span class="w"> </span>/B<span class="w"> </span>&gt;LIST.TXT
+</pre></div>
+</div>
+<img alt="bat文件中的内容" class="align-center" src="../_images/docxto009.png" />
+<p>3.将新建文本文档的后缀名改为 .bat后双击运行得到 了LIST.TXT ，</p>
+<img alt="得到LIST.TXT" class="align-center" src="../_images/docxto010.png" />
+<p>4.用notepad++打开LIST.TXT,删除图中的两行</p>
+<img alt="打开LIST.TXT" class="align-center" src="../_images/docxto011.png" />
+<p>5.鼠标：alt+鼠标左键选择中所有的行。键盘：alt+shift+方向鍵将位置调整到行首。输入rstfromdocx -lurg 后保存。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rstfromdocx<span class="w"> </span>-lurg
+</pre></div>
+</div>
+<img alt="输入" class="align-center" src="../_images/docxto012.png" />
+<p>6.在文档所在的文件夹按住shift键和点击鼠标右键，选中打开powershell，</p>
+<img alt="打开powershell" class="align-center" src="../_images/docxto013.png" />
+<p>7.全选上面编辑好的文档列表然后复制到powershell中，鼠标右键复制，文档开始转换</p>
+<img alt="文档开始转换" class="align-center" src="../_images/docxto014.png" />
+<p>8.完成后就得到了转换好的文件，将转换好的文件复制到一个新文件夹中，防止接下来的操作失败，注意备份</p>
+</section>
+<section id="rest-rst">
+<h2><span class="section-number">3.3. </span>批量将.rest修改为.rst并删除不需要的文件<a class="headerlink" href="#rest-rst" title="Link to this heading"></a></h2>
+<p>1.在新文件夹中新建一个.bat文件，并复制以下内容保存后运行</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>del<span class="w"> </span>*.py<span class="w"> </span>/s
+del<span class="w"> </span>index.rest<span class="w"> </span>/s
+del<span class="w"> </span>Makefile<span class="w"> </span>/s
+
+<span class="k">for</span><span class="w"> </span>/f<span class="w"> </span><span class="s2">&quot;tokens=* delims=&quot;</span><span class="w"> </span>%%i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;dir /b /a-d /s &quot;*.rest&quot;&#39;</span><span class="o">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">(</span>move<span class="w"> </span><span class="s2">&quot;%%i&quot;</span><span class="w"> </span><span class="s2">&quot;%%~dpi./../&quot;</span><span class="o">)</span>
+<span class="k">for</span><span class="w"> </span>/f<span class="w"> </span><span class="s2">&quot;tokens=* delims=&quot;</span><span class="w"> </span>%%i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;dir /b /a-d /s &quot;*.png&quot;&#39;</span><span class="o">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">(</span>move<span class="w"> </span><span class="s2">&quot;%%i&quot;</span><span class="w"> </span><span class="s2">&quot;%%~dpi./../&quot;</span><span class="o">)</span>
+<span class="k">for</span><span class="w"> </span>/f<span class="w"> </span><span class="s2">&quot;tokens=* delims=&quot;</span><span class="w"> </span>%%i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;dir /b /a-d /s &quot;*.jpeg&quot;&#39;</span><span class="o">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">(</span>move<span class="w"> </span><span class="s2">&quot;%%i&quot;</span><span class="w"> </span><span class="s2">&quot;%%~dpi./../&quot;</span><span class="o">)</span>
+<span class="k">for</span><span class="w"> </span>/f<span class="w"> </span><span class="s2">&quot;tokens=* delims=&quot;</span><span class="w"> </span>%%i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;dir /b /a-d /s &quot;*.jpg&quot;&#39;</span><span class="o">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">(</span>move<span class="w"> </span><span class="s2">&quot;%%i&quot;</span><span class="w"> </span><span class="s2">&quot;%%~dpi./../&quot;</span><span class="o">)</span>
+<span class="k">for</span><span class="w"> </span>/f<span class="w"> </span><span class="s2">&quot;tokens=* delims=&quot;</span><span class="w"> </span>%%i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;dir /b /a-d /s &quot;*.bmp&quot;&#39;</span><span class="o">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">(</span>move<span class="w"> </span><span class="s2">&quot;%%i&quot;</span><span class="w"> </span><span class="s2">&quot;%%~dpi./../&quot;</span><span class="o">)</span>
+
+echo.
+<span class="nb">echo</span><span class="w"> </span>正在删除当前目录及子目录中所有的空文件夹，请稍后......
+<span class="nb">echo</span><span class="w"> </span>-------------------------------------------------------------
+cd.<span class="w"> </span>&gt;<span class="w"> </span>listnull.txt
+<span class="k">for</span><span class="w"> </span>/f<span class="w"> </span><span class="s2">&quot;delims=&quot;</span><span class="w"> </span>%%i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;dir /ad /b /s&#39;</span><span class="o">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">(</span>
+dir<span class="w"> </span>/b<span class="w"> </span><span class="s2">&quot;%%i&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>findstr<span class="w"> </span>.&gt;nul<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>%%i<span class="w"> </span>&gt;&gt;<span class="w"> </span>listnull.txt
+<span class="o">)</span>
+
+<span class="nb">set</span><span class="w"> </span>/a<span class="w"> </span><span class="nv">sum</span><span class="o">=</span><span class="m">0</span>
+<span class="k">for</span><span class="w"> </span>/f<span class="w"> </span><span class="s2">&quot;tokens=*&quot;</span><span class="w"> </span>%%i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span>listnull.txt<span class="o">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">(</span>
+rd<span class="w"> </span>/q<span class="w"> </span><span class="s2">&quot;%%i&quot;</span>
+<span class="nb">echo</span><span class="w"> </span>成功删除空目录：%%i
+<span class="nb">set</span><span class="w"> </span>/a<span class="w"> </span><span class="nv">sum</span><span class="o">=</span>sum+1
+<span class="o">)</span>
+
+<span class="nb">echo</span><span class="w"> </span>-------------------------------------------------------------
+<span class="nb">echo</span><span class="w"> </span>共成功删除%cd%目录及其子目录下%sum%个空文件夹！
+echo.
+<span class="nb">set</span><span class="w"> </span><span class="nv">sum</span><span class="o">=</span>
+
+ren<span class="w"> </span>*.rest<span class="w"> </span>*.rst
+
+del<span class="w"> </span>listnull.txt
+
+<span class="nb">exit</span>
+</pre></div>
+</div>
+<p>上述代码的作用是删除不需要的文件和空文件夹，并将图片文件移动到上一级目录下，然后将rest更名为rst</p>
+<p>2.新建一个media文件夹，并将存放图片的文件夹移动至media文件夹，至此，批量转换完成</p>
+<img alt="将存放图片的文件夹移动至media文件夹" class="align-center" src="../_images/docxto015.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../install-sphinx-env/vscode.html" class="btn btn-neutral float-left" title="2. 使用vscode编写rst文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../rest-syntax/base-syntax.html" class="btn btn-neutral float-right" title="1. ReST基础语法" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2019, embedfire-野火 www.embedfire.com。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
